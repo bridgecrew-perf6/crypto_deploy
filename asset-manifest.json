@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/crypto_deploy.git/static/js/main.81df8612.js",
-    "index.html": "/crypto_deploy.git/index.html",
-    "main.81df8612.js.map": "/crypto_deploy.git/static/js/main.81df8612.js.map"
+    "main.js": "/crypto_deploy/static/js/main.aa3520fb.js",
+    "index.html": "/crypto_deploy/index.html",
+    "main.aa3520fb.js.map": "/crypto_deploy/static/js/main.aa3520fb.js.map"
   },
   "entrypoints": [
-    "static/js/main.81df8612.js"
+    "static/js/main.aa3520fb.js"
   ]
 }
