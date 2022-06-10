@@ -89,9 +89,9 @@ function App() {
       <ThemeProvider theme={Theme}>
         <ToggleMode onClick={toggleTheme}>
           {Theme === Darktheme ? (
-            <img style={{ width: "2rem" }} src="/moon.png" />
+            <img style={{ width: "2rem" }} src="./images/moon.png" />
           ) : (
-            <img style={{ width: "3rem" }} src="/sun.png" />
+            <img style={{ width: "3rem" }} src="./images/sun.png" />
           )}
         </ToggleMode>
         <GlobalStyle />
