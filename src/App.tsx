@@ -75,6 +75,70 @@ const ToggleMode = styled.div`
   right: 1rem;
   cursor: pointer;
   color: ${props => props.theme.boxColor};
+  .toggle-container {
+    position: relative;
+    display: inline-block;
+    width: 74px;
+    height: 34px;
+    pointer-events: none;
+    input {
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: all;
+      cursor: pointer;
+    }
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      cursor: pointer;
+      background-color: #808080;
+      transition: 0.4s;
+      pointer-events: none;
+    }
+    .slider::before {
+      content: "";
+      position: absolute;
+      height: 24px;
+      width: 24px;
+      left: 5px;
+      bottom: 5px;
+      background-color: #fff;
+      transition: 0.2s;
+      pointer-events: none;
+    }
+    .slider::after {
+      position: absolute;
+      content: "🌛";
+      height: 24px;
+      width: 24px;
+      right: 0px;
+      bottom: 3px;
+      transition: 0.2s;
+      pointer-events: none;
+      color: #fff;
+    }
+    input:checked + .slider {
+      background-color: #2196f3;
+    }
+    input:checked + .slider:before {
+      transform: translateX(40px);
+    }
+    input:checked + .slider:after {
+      content: "🌞";
+      left: 8px;
+    }
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  }
 `;
 
 function App() {
@@ -88,11 +152,10 @@ function App() {
     <>
       <ThemeProvider theme={Theme}>
         <ToggleMode onClick={toggleTheme}>
-          {Theme === Darktheme ? (
-            <img style={{ width: "2rem" }} src="images/moon.png" />
-          ) : (
-            <img style={{ width: "3rem" }} src="images/sun.png" />
-          )}
+          <div className="toggle-container">
+            <input type="checkbox" />
+            <div className="slider round"></div>
+          </div>
         </ToggleMode>
         <GlobalStyle />
         <Router />
